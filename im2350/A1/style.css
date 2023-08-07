@@ -1,0 +1,73 @@
+.header{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left:40%;
+    background-color:black;
+
+}
+
+h1{
+    font-family: 'Copperplate';
+    font-size: 50px;
+}
+
+h2{
+    font-family: 'Arial';
+    font-size: 30px;
+    padding-right: 100px;
+    padding-left: 100px;
+    color: blue;
+}
+
+h3{
+    font-style: italic;
+    font-family: 'Arial';
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+p{
+    font-family: 'Arial';
+    font-size: 18px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+/*FIRST SECTION (WEEK 2)*/
+.first{ 
+    height: 1650px;
+    width: 50%;
+    padding-top: 10px;
+    float: left;
+}
+
+ul{
+    font-family: 'Arial';
+    font-size: 18px;
+    padding-right: 100px;
+    padding-left: 200px;
+}
+
+/*SECOND SECTION (WEEK 3)*/
+.second{
+    width: 50%;
+    padding-top: 10px;
+    float: left;
+}
+
+.row:after{
+    content: "";
+    display:table;
+    clear:both;
+    height:auto;
+}
+
+/*FOOTER*/
+.footer{
+    text-align: center;
+    color: white;
+    background-color:black;
+    padding: 3px;
+    width:100%;
+}
+
