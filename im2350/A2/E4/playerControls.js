@@ -6,6 +6,7 @@ let audioElement = document.getElementById("audioElement");
 // the buttons for the controls
 let playButton = document.getElementById("playButton");
 let stopButton = document.getElementById("stopButton");
+let loopButton = document.getElementById('loopButton');
 // the progress element
 let progressBar = document.getElementById("progressBar");
 // the hero image
@@ -73,20 +74,72 @@ function playPause(){
     // if it isn't already playing make it play
     audioElement.play();
     // then make sure the icon on the button changes to pause indicating what it does if you click it
+    // show the video overlay icon when the audio is not being played
     playButton.style.backgroundImage = "url('./icons/pause.svg')";
+    document.getElementById("audioPlayOverlay").style.display = "none";
   } else {
     // if it is already playing make it pause
     audioElement.pause();
     // then make sure the icon on the button changes to play indicating what it does if you click it
+    // hides the video overlay icon when the audio is playing
+    // by having these redundancy icons it indicates to the user if the video is still being played or not
     playButton.style.backgroundImage = "url('./icons/play.svg')";
+    document.getElementById("audioPlayOverlay").style.display = "block";
   }
 }
-
 // now we have our function we need to attach it to two seperate events, the first is probably obvious - clicking on the play button
 playButton.addEventListener('click', playPause);
 
 // the second event we want is clicking on the hero image, a feature popularised by youtube that is now ubiquitous in online media players
 heroImage.addEventListener('click', playPause);
+
+//LOOP BUTTON
+// enables the loop function 
+var x = document.getElementById('audioElement');
+
+// this 'true' will indicate that the audio shall start playing again when it ends
+// on click of the loop button, the page will reload to indicate to users that the loop is activated on the media player
+function enableLoop() {
+  //check if audio is loop
+  x.loop = true;
+  x.reload();
+}
+// upon the loop button being clicked, it will enable the loop of audio, for when the audio finishes playing
+loopButton.addEventListener('click', enableLoop);
+
+
+//MUTE BUTTON
+//The mute button allow for the user to mute the audio when needed
+//enables the mute function on the media player 
+var x = document.getElementById("audioElement");
+
+function enableMute() {
+  x.muted = true;
+  //if the mute is true, change icon 
+  //this will be a visual cue to let user know that the audio has been muted
+  muteButton.style.backgroundImage = "url('./icons/unmute.svg')";
+}
+// once clicked it will active the mute function of the audio
+muteButton.addEventListener('click', enableMute);
+
+
+//NOTES--> this code here works but it changes the design of the media player completely,
+//therefore, I had to use a different code for the mute button
+// this layout also shows the time stamp of the audio
+//function muteUnmute() {
+  //console.log("mute/unmute is working")
+  //if ()audioElement.muted{
+    //audioElement.muted = false;
+    //if muted is set to false change to mute icon 
+   // muteButton.style.backgroundImage = "url('./icons/mute.svg')";
+  //} else {
+    //audioElement.muted = true;
+    //if unmuted is set to true change to unmute icon
+  //  muteButton.style.backgroundImage = "url('./icons/unmute.svg')";
+  //}
+//}
+
+
 
 // this feature is unfinished in my code - while it works it has no signifiers to let users know they can do this by clicking the audio
 // there is already an element appropriately placed as a signifier, the <img> with the id of audioPlayerOverlay however its CSS is currently

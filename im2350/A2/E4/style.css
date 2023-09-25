@@ -52,7 +52,6 @@
   align-self: center;
   opacity: 0.6;
   pointer-events: none;
-  display: none;
 }
 
 .audio-controls-wrapper{
@@ -72,10 +71,10 @@
   cursor: pointer;
 }
 .audio-control-button:hover{
-  background-color: var(--col-05);
+  background-color: rgb(138, 138, 240);
 }
 .audio-control-button:active{
-  background-color: var(--col-06);
+  background-color: rgb(24, 55, 231);
 }
 .button-icon{
   pointer-events: none;
@@ -84,6 +83,15 @@
 #playButton{
   background-image: url('./icons/play.svg');
 }
+
+#loopButton{
+  background-image: url('./icons/loop.svg');
+}
+
+#muteButton{
+  background-image: url('./icons/mute.svg');
+}
+
 
 .audio-progress-bar{
   /* Reset the default appearance */
@@ -97,6 +105,10 @@
   background-color: var(--col-01);
   box-shadow: 0 1px 2px var(--col-02) inset;
 }
+/*Hover colour was changed to indicate that the button can be clicked on*/
+/*I chose a colour that was similar to the picture so that it could be a more cohesive design*/
+
+
 ::-moz-progress-bar {
   background-color: var(--col-02);
 }
@@ -105,8 +117,10 @@
   background-color: var(--col-01);
   box-shadow: 0 1px 2px var(--col-02) inset;
 }
+
+/*progress bar colour was changed so that it be cohesive*/
 ::-webkit-progress-value {
-  background-color: var(--col-02);
+  background-color: rgb(133, 133, 236);
 }
 
 .timeline-loading{
