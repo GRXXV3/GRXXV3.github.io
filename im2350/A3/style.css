@@ -1,0 +1,65 @@
+/*ANIMATED GRADIENT BACKGROUND*/
+/*To give a more interactive feel, I added a gradient linear animated background. I decided to choose colours that were similar to the colours in the video clips, I didn't want something too bold that could be distracting from the videos, I wanted it to feel like a cohesive design. The animated gradient transitions from one corner to the other diagonally of the four colours.*/
+body{
+    background: linear-gradient(-45deg, #e7734f, #e99f00, #0e6ead, #dfdd81);
+    background-size: 400%, 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*HEADING*/
+/*I chose this front because I wanted something that was similar to handwriting, these video clips are like a chapter in my travel diary. Therefore, I wanted something that looked like the chapter title that was handwritten.*/
+h2{
+    text-align: center;
+    padding-bottom: 0vh;
+    font-family: 'Homemade Apple', cursive;
+    color:rgb(21, 40, 146);
+    
+}
+
+/*For responsive videos to ensure for an optimal viewing experience*/
+.video-container{
+    max-width: 100%;
+    margin: 0 auto;
+    
+}
+
+.video-container video{
+    width: 100%; /*Fill the available width*/
+    height: auto; /*Adjust height automatically*/
+}
+
+/*THE VIDEOS LAYOUT*/
+/*In my initial plan for the layout was to have the videos in different sizes and randomly placed and even kinda overlapping each other. However, during the building process, I found that layout to look really harsh and difficult on the eyes, almost looked like those overlapped error spam messages which is not what I wanted. As I was also implementing the hover effect.*/ 
+#left{
+    margin-top: 4vh;
+    margin-left: 4vh;
+}
+
+#right{
+    margin-top: 20vh;
+    margin-left: 4vh;
+}
+
+/*The videos are in a somewhat broken up layout, breaking the spaces for the eyes to see each one with ease, which creates an organised visual hierachy on the website. There would be a lot to process, had the videos been in a uniform right next to each other layout, as it would affect the users interaction.*/
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding-bottom: 6vh;
+    
+}
+
+/*In my initial plan, there were suppose to be a hover text box but seeing it onscreen it had taken away from these very short video clips. Therefore, I opted for a hover auto play effect instead. */
